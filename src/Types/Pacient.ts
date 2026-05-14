@@ -1,25 +1,20 @@
+export type PatientState = "mrtvý" | "kritický" | "stabilní" | "zlepšující se"
+
+import type { ReactNode } from "react"
+
 export type Pacient = {
-  firsName: string;
+  firstName: string;
   surName: string;
   age: number;
-  details: {
-    height: number;
-    weight: number;
-    hair: {
-      length: string,
-      type: string,
-      color: string
-    };
-    eyes: {
-      width: number;
-      type: string;
-      color: string;
-    };
-  };
-  clothes: {
-    head: string;
-    top: string;
-    bottom: string;
-    boots: string;
-  };
+
+  height: number; // cm
+  weight: number; // kg
+
+  arrivedAt: Date;
+  timeOfDeath: Date | null;
+
+  arrivedState: ReactNode;
+  currentState: PatientState;
+
+  Tragedy: ReactNode;
 };
